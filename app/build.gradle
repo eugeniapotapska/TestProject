@@ -11,8 +11,8 @@ android {
         applicationId "com.example.testproject"
         minSdkVersion 21
         targetSdkVersion 28
-        versionCode 1
-        versionName "1.0"
+        versionCode System.getenv("BUILD_NUMBER") as Integer ?: 1
+        versionName "1.$versionCode"
         testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
     }
     buildTypes {
